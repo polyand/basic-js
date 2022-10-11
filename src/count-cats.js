@@ -24,26 +24,11 @@ function cats(matrix, ears) {
   return x;
 }
 
-
 function countCats(matrix) {
   let ears = 0;
   return cats(matrix, ears);
 }
 
-
-
-
-
-
-
-
-
 module.exports = {
   countCats
 };
-
-console.log (countCats([
-  [0, 1, '^^'],
-  [0, '^^', 2],
-  ['^^', 1, 2]
-]))
