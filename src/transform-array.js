@@ -60,7 +60,3 @@ function transform(arr) {
 module.exports = {
   transform
 };
-
-
-console.log(transform([1, 2, 3, '--discard-next', 1337, '--double-prev', 4, 5]));
-// console.log(transform(['--double-prev', 1, 2, 3]));
