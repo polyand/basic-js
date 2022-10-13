@@ -10,17 +10,21 @@ const chainMaker = {
     return this.chain.length;
   },
   addLink(value) {
-    if (value) this.chain.push(`( ${value} )`);
+    if (value || value === null || isNaN(value) || value === 0 || value === false) this.chain.push(`( ${value} )`);
     else this.chain.push('( )');
     return this;
   },
   removeLink(position) {
     if (typeof position == 'number' &&
-      Number.isInteger(position) &&
-      this.chain.length >= position > 0)
-      this.chain.splice(position - 1, 1);
-    else throw new Error("You can't remove incorrect link!");
+    Number.isInteger(position) &&
+    this.chain.length >= position && position > 0) 
+    this.chain.splice(position - 1, 1);
+    else {
+      this.chain = [];
+      throw new Error("You can\'t remove incorrect link!");
+    }
     return this
+
   },
   reverseChain() {
     this.chain.reverse()
